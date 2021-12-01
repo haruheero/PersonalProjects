@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Vidaloka&display=swap"
+      rel="stylesheet"
+    />
+    <title>page 3</title>
+  </head>
+  <body>
+    <!-- contains all components -->
+    <div class="container">
+      <!-- picture slideshow division -->
+      <div class="slideshow">
+        <!-- slideshow frame -->
+        <div id="slider">
+          <ul id="slideWrap">
+            <li><img src="image1.png" alt="" /></li>
+            <li><img src="image2.png" alt="" /></li>
+            <li><img src="image3.png" alt="" /></li>
+          </ul>
+          <a id="prev" href="#">&#8810;</a>
+          <a id="next" href="#">&#8811;</a>
+        </div>
+      </div>
+
+      <!-- division for content -->
+      <div class="contentbox">
+        <h1>Our Events</h1>
+        <ul class="content">
+          <li>
+            Enactus DDUC successfully conducted a very insightful and
+            informative session on ‘Nutrition 101: Malnutrition and other eating
+            disorders’ with clinical dietician and sports nutritionist Ms.
+            Manisha Mehta, a food scientist, holds a certification in sports
+            nutrition from California with 8+ years of experience.
+          </li>
+          <li>
+            On the occasion of National Nutrition Week Enactus DDUC conducted an
+            informative live session on NUTRITION 101 with DT. LAKSHITA JAIN.
+            Dt. Lakshita is the founder of health clinic Nutr. She is constantly
+            writing leading newspapers such as Times of India, HT city, Femina,
+            Cosmopolitan, and many more. She is a diabetes educator, meat
+            technologist and has been counseling people on PCOS, weight loss,
+            right eating.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var responsiveSlider = function () {
+        var slider = document.getElementById("slider");
+        var sliderWidth = slider.offsetWidth;
+        var slideList = document.getElementById("slideWrap");
+        var count = 1;
+        var items = slideList.querySelectorAll("li").length;
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+
+        window.addEventListener("resize", function () {
+          sliderWidth = slider.offsetWidth;
+        });
+
+        var prevSlide = function () {
+          if (count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          } else if ((count = 1)) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          }
+        };
+
+        var nextSlide = function () {
+          if (count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          } else if ((count = items)) {
+            slideList.style.left = "0px";
+            count = 1;
+          }
+        };
+
+        next.addEventListener("click", function () {
+          nextSlide();
+        });
+
+        prev.addEventListener("click", function () {
+          prevSlide();
+        });
+
+        setInterval(function () {
+          nextSlide();
+        }, 5000);
+      };
+      window.onload = function () {
+        responsiveSlider();
+      };
+    </script>
+  </body>
+</html>
