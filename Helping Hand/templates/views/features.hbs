@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"stylestyle="scroll-behavior:smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- <script src="../jq/jquery.js" type="text/javascript"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/utilities.css"> 
+    <link rel="stylesheet" href="/css/style.css">
+      <title>Helping Hand</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <nav>
+                <ul id="hi">
+                    <li><a id="first" href="/">Home</a></li>
+                    <li><a id="second" href="/features">Need Help?</a></li>
+                    <li><a id="third" href="/doc2">volunteer</a></li>
+                    <li><a id="third" href="http://makeyourchat.c1.biz">Feeling Lonely?</a></li>
+                    {{!-- <li class="toggle"><i class="fas fa-moon"></i></li> --}}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Head -->
+    <section class="features-head bg-primary py-3">
+        <div class="container grid">
+            <div>
+                <h1 class="xl">Need help?</h1>
+            </div>
+            <img src="/images/helping hand.svg" alt="">
+        </div>
+    </section>
+
+    <!-- Sub head -->
+    <section class="features-sub-head bg-light py-3">
+        <div id="me" class="container grid">
+            <div>
+                <h1 class="md">Do you need a Helping Hand?</h1>
+                <p>
+                   Be it any any kind of help either looking for medicines or need to get some groceries, we will help you find someone to help you out. Just fill out the form and we will try our best to help you out.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+                <i class="fas fa-server fa-3x"></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nemo saepe corrupti et dolorem voluptate at, nostrum rem voluptatem ab alias quia molestiae ea, libero nihil deserunt. Molestias, eum? Necessitatibus!</p>
+            </div>
+    </div>
+    </section> -->
+
+    <div id="form-display" class="showcase-form card">
+
+        <h2>REGISTRATION FORM</h2>
+        <form action="/features" id="userform" method="POST">
+            
+            <table class="part1">
+                <tr>
+                    <td colspan="2">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter full name" class="pname placeholder">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Age</label>
+                        <input type="number" name="age" id="age" placeholder="Enter age" class="page placeholder">
+                    </td>
+                    <td>
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="number">Phone number</label>
+                        <input type="number" name="number" id="number" placeholder="Enter number" class="pnum placeholder">
+                    </td>
+                    <td >
+                        <label for="location" >Location</label>
+                        <span id="image"></span>
+                        <a onclick="getLocation()" target="_blank" class="locationlink">Get location</a>
+                        <input type="text"id="locate" value="hh"  name="locate" style="display: none;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="name">How can we help you?</label>
+                        <input type="text" name="helptext" id="help-text" placeholder="Enter what help you need." class="pname placeholder">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="submit" colspan="3">
+                        {{!-- <button type="submit" >Submit</button> --}}
+                    <input type="submit" class="locationlink" value="register" />
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Helping Hand
+                </h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/features">Need Help?</a></li>
+                    <li><a href="/doc2">volunteer</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+        <script src="/js/featurejs.js"></script>
+</body>
+</html>
